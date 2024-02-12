@@ -1,4 +1,4 @@
-# Key Users University Computer Lab
+# Initial Study University Computer Lab
 
 #### To Interview
 
@@ -170,5 +170,106 @@ time restrictions placed on the user, except when the UCL is reserved for a clas
 
     - The system’s operation will be independent of existing administrative systems on campus.
 
+## System Objectives
 
-    
+#### Business Requirements
+
+    - Improve operational efficiency, thereby increasing the UCL’s capacity and the UCL’s
+      ability to expand its operations.
+
+    - Provide useful information for planning, control, and security
+
+#### Inventory/Storage/Order Management Requirements
+
+    - Provide better control of purchase orders, allowing the CLD to check open orders and
+      purchases.
+
+    - Monitor the stock of supply items.
+
+    - Control inventory by type (group) as well as by individual item.
+
+    -  Provide quick and efficient information about the location and status of individual
+       items.
+
+    - Provide timely information about the use of supplies and generate the statistical 
+      information required to guide the timing and extent of future purchases.
+
+#### Equipment Maintenance and Repair Management
+
+    - Monitor the maintenance history of each item.
+
+    - Keep track of items that have been returned to the vendor for repair or replacement.
+
+#### Equipment Check-Out/Check-In Management
+
+    - Keep track of the items that are checked out.
+
+    - Monitor the items’ check-out time.
+
+    - Generate usage statistics for reference purposes.
+
+#### Lab Assistant Payroll Management
+
+    - Provide scheduling and workload information.
+
+    - Provide work summaries for each LA.
+
+#### Lab Reservations Management
+
+    - Decrease the time spent processing a reservation.
+
+    - Produce reservation schedules.
+
+    - Generate statistical summaries by department, faculty, staff member, and date (to be
+      used for planning purposes).
+
+#### Computer Lab Access Management
+
+    - Provide tighter control over users and resources in the Lab.
+
+    - Reduce the sign-in time.
+
+    - Provide information about peak use times (to be used for scheduling purposes).
+
+#### System Modules
+
+    - Lab Management System
+   
+    - Inventory Management System
+
+#### System Model
+
+![](./system_model.png)
+
+The INVENTORY process must permit:
+
+    - Registering new inventory types and individual items.
+    - Keeping track of an item’s location, classification, and usage.
+
+The INVENTORY process will interface with the ORDER, STORAGE, MAINTENANCE, and CHECK_OUT processes.
+
+The ORDER process tracks types of inventory items that are ordered from vendors.
+
+The system will be designed to track the purchase orders and requisitions placed by the
+UCL. The ORDER process will interface with the INVENTORY process.
+
+The MAINTENANCE process will track the in-house repairs performed on items, as
+well as track items returned to the vendor for repair. The MAINTENANCE process also
+interfaces with the INVENTORY process because items found in inventory may have a
+repair history.
+
+The CHECK_OUT process will track the items that are checked out by the Lab’s users:
+faculty, staff, and students.
+
+The ACCESS process will help the CLD track the Lab’s users. The ACCESS process
+will interface with the CHECK_OUT process because some items are checked out by
+students, faculty, or staff members.
+
+The RESERVATION process will track Lab reservations made by faculty or staff members. The process interfaces with:
+
+    - ACCESS (because faculty members reserve the Lab).
+    - PERSONNEL (because an LA records the reservation).
+
+The PERSONNEL process will facilitate the CLD’s ability to monitor the LAs’ work
+schedules and actual hours worked. This process interfaces with the RESERVATION
+process because LAs record Lab reservations.
